@@ -1,0 +1,13 @@
+import os
+import tensorflow as tf
+
+# Check if GPU is available
+device_name = os.environ.get('CUDA_VISIBLE_DEVICES')
+if device_name:
+    print(f"GPU available: {device_name}")
+else:
+    print("No GPU available.")
+
+# List the available GPUs
+num_gpus = tf.config.experimental.list_physical_devices('GPU')
+print(f"Number of GPUs available: {num_gpus}")
